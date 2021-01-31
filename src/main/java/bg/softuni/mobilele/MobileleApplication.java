@@ -1,4 +1,4 @@
-package bg.softuni.mobilele.mobilele;
+package bg.softuni.mobilele;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
