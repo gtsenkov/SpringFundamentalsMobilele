@@ -18,7 +18,8 @@ public class ModelEntity extends BaseEntity{
 
     private int startYear;
 
-    private int endYear;
+
+    private Integer endYear;
 
     @ManyToOne
     private BrandEntity brand;
@@ -27,48 +28,54 @@ public class ModelEntity extends BaseEntity{
         return name;
     }
 
-    public void setName(String name) {
+    public ModelEntity setName(String name) {
         this.name = name;
+        return this;
     }
 
     public ModelCategoryEnum getCategory() {
         return category;
     }
 
-    public void setCategory(ModelCategoryEnum category) {
+    public ModelEntity setCategory(ModelCategoryEnum category) {
         this.category = category;
+        return this;
     }
 
     public String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
+    public ModelEntity setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+        return this;
     }
 
     public int getStartYear() {
         return startYear;
     }
 
-    public void setStartYear(int startYear) {
+    public ModelEntity setStartYear(int startYear) {
         this.startYear = startYear;
+        return this;
     }
 
-    public int getEndYear() {
+    public Integer getEndYear() {
         return endYear;
     }
 
-    public void setEndYear(int endYear) {
+    public ModelEntity setEndYear(Integer endYear) {
         this.endYear = endYear;
+        return this;
     }
 
     public BrandEntity getBrand() {
         return brand;
     }
 
-    public void setBrand(BrandEntity brand) {
+    public ModelEntity setBrand(BrandEntity brand) {
         this.brand = brand;
+        return this;
     }
 
     @Override
