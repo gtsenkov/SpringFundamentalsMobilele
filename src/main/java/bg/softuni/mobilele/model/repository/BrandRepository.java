@@ -1,4 +1,4 @@
-package bg.softuni.mobilele.repository;
+package bg.softuni.mobilele.model.repository;
 
 import bg.softuni.mobilele.model.entities.BrandEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

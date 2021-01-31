@@ -4,8 +4,8 @@ import bg.softuni.mobilele.model.entities.BaseEntity;
 import bg.softuni.mobilele.model.entities.BrandEntity;
 import bg.softuni.mobilele.model.entities.ModelEntity;
 import bg.softuni.mobilele.model.entities.enums.ModelCategoryEnum;
-import bg.softuni.mobilele.repository.BrandRepository;
-import bg.softuni.mobilele.repository.ModelRepository;
+import bg.softuni.mobilele.model.repository.BrandRepository;
+import bg.softuni.mobilele.model.repository.ModelRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

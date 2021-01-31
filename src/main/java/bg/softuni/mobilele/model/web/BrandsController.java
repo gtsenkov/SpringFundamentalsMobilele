@@ -1,6 +1,6 @@
-package bg.softuni.mobilele.web;
+package bg.softuni.mobilele.model.web;
 
-import bg.softuni.mobilele.service.BrandService;
+import bg.softuni.mobilele.model.service.BrandService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
