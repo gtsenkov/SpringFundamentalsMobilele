@@ -3,13 +3,18 @@ package bg.softuni.mobilele;
 import bg.softuni.mobilele.model.entities.BaseEntity;
 import bg.softuni.mobilele.model.entities.BrandEntity;
 import bg.softuni.mobilele.model.entities.ModelEntity;
+import bg.softuni.mobilele.model.entities.OfferEntity;
+import bg.softuni.mobilele.model.entities.enums.EngineEnum;
 import bg.softuni.mobilele.model.entities.enums.ModelCategoryEnum;
+import bg.softuni.mobilele.model.entities.enums.TransmissionEnum;
 import bg.softuni.mobilele.model.repository.BrandRepository;
 import bg.softuni.mobilele.model.repository.ModelRepository;
+import bg.softuni.mobilele.model.repository.OfferRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;
+import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
 
@@ -17,10 +22,12 @@ import java.util.List;
 public class DBInit implements CommandLineRunner {
     private final ModelRepository modelRepository;
     private final BrandRepository brandRepository;
+    private final OfferRepository offerRepository;
 
-    public DBInit(ModelRepository modelRepository, BrandRepository brandRepository) {
+    public DBInit(ModelRepository modelRepository, BrandRepository brandRepository, OfferRepository offerRepository) {
         this.modelRepository = modelRepository;
         this.brandRepository = brandRepository;
+        this.offerRepository = offerRepository;
     }
 
     @Transactional
@@ -39,9 +46,28 @@ public class DBInit implements CommandLineRunner {
 
         initEscort(fordBrand);
 
-        initFiesta(fordBrand);
+        ModelEntity fiestaModel = initFiesta(fordBrand);
 
         initNC750S(hondaBrand);
+
+        createFiestaOffer(fiestaModel);
+
+    }
+
+    private void createFiestaOffer(ModelEntity modelEntity) {
+        OfferEntity fiestaOffer = new OfferEntity();
+
+        fiestaOffer.setEngine(EngineEnum.GASOLINE)
+                .setImageUrl("https://www.ford.com/is/image/content/dam/brand_ford/en_us/brand/cars/fiesta/2019/dm/19_FRD_FIE_40322_ST.tif?croppathe=1_3x2&wid=900")
+                .setMileage(80000)
+                .setPrice(BigDecimal.valueOf(10000))
+                .setYear(2019)
+                .setDescription("ST-to e golema rabota!!!")
+                .setTransmission(TransmissionEnum.MANUAL)
+                .setModel(modelEntity);
+        setCurrentTimeStamps(fiestaOffer);
+
+        offerRepository.save(fiestaOffer);
 
     }
 
