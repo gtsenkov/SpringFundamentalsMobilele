@@ -1,14 +1,13 @@
-package bg.softuni.mobilele.model.service.impl;
+package bg.softuni.mobilele.service.impl;
 
 import bg.softuni.mobilele.model.entities.BrandEntity;
 import bg.softuni.mobilele.model.entities.ModelEntity;
-import bg.softuni.mobilele.model.repository.ModelRepository;
-import bg.softuni.mobilele.model.service.BrandService;
+import bg.softuni.mobilele.model.ModelRepository;
+import bg.softuni.mobilele.service.BrandService;
 import bg.softuni.mobilele.model.view.BrandViewModel;
 import bg.softuni.mobilele.model.view.ModelViewModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 
 import java.util.ArrayList;
 import java.util.List;

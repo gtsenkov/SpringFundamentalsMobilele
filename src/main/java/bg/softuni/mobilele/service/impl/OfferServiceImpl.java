@@ -1,6 +1,6 @@
-package bg.softuni.mobilele.model.service.impl;
+package bg.softuni.mobilele.service.impl;
 
-import bg.softuni.mobilele.model.service.OfferService;
+import bg.softuni.mobilele.service.OfferService;
 import bg.softuni.mobilele.model.view.OfferSummaryViewModel;
 import org.springframework.stereotype.Service;
 
