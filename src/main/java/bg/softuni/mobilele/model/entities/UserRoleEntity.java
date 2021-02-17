@@ -19,16 +19,18 @@ public class UserRoleEntity {
         return id;
     }
 
-    public void setId(Long id) {
+    public UserRoleEntity setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public UserRoleEnum getRole() {
         return role;
     }
 
-    public void setRole(UserRoleEnum role) {
+    public UserRoleEntity setRole(UserRoleEnum role) {
         this.role = role;
+        return this;
     }
 
     @Override
