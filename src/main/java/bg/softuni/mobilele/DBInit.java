@@ -38,11 +38,11 @@ public class DBInit implements CommandLineRunner {
     public void run(String... args) throws Exception {
         BrandEntity fordBrand = new BrandEntity();
         fordBrand.setName("Ford");
-        setCurrentTimeStamps(fordBrand);
+//        setCurrentTimeStamps(fordBrand);
 
         BrandEntity hondaBrand = new BrandEntity();
         hondaBrand.setName("Honda");
-        setCurrentTimeStamps(hondaBrand);
+//        setCurrentTimeStamps(hondaBrand);
 
         brandRepository.saveAll(List.of(fordBrand, hondaBrand));
 
@@ -71,7 +71,7 @@ public class DBInit implements CommandLineRunner {
                 setUsername("admin").
                 setPassword(passwordEncoder.encode("topSecret")).
                 setUserRoles(List.of(adminRole, userRole));
-        setCurrentTimeStamps(admin);
+//        setCurrentTimeStamps(admin);
 
         UserEntity gosho = new UserEntity();
         gosho.setFirstName("Gosho").
@@ -79,7 +79,7 @@ public class DBInit implements CommandLineRunner {
                 setUsername("gosho").
                 setPassword(passwordEncoder.encode("topSecret")).
                 setUserRoles(List.of(userRole));
-        setCurrentTimeStamps(gosho);
+//        setCurrentTimeStamps(gosho);
 
         userRepository.saveAll(List.of(admin, gosho));
     }
@@ -95,7 +95,7 @@ public class DBInit implements CommandLineRunner {
                 .setDescription("ST-to e golema rabota!!!")
                 .setTransmission(TransmissionEnum.MANUAL)
                 .setModel(modelEntity);
-        setCurrentTimeStamps(fiestaOffer);
+//        setCurrentTimeStamps(fiestaOffer);
 
         offerRepository.save(fiestaOffer);
 
@@ -111,7 +111,7 @@ public class DBInit implements CommandLineRunner {
                 .setStartYear(1976)
                 .setBrand(fordBrand);
 
-        setCurrentTimeStamps(fiesta);
+//        setCurrentTimeStamps(fiesta);
 
         return modelRepository.save(fiesta);
     }
@@ -126,7 +126,7 @@ public class DBInit implements CommandLineRunner {
                 .setStartYear(2014)
                 .setBrand(hondaBrand);
 
-        setCurrentTimeStamps(NC750S);
+//        setCurrentTimeStamps(NC750S);
 
         return modelRepository.save(NC750S);
     }
@@ -142,13 +142,13 @@ public class DBInit implements CommandLineRunner {
                 .setEndYear(2002)
                 .setBrand(fordBrand);
 
-        setCurrentTimeStamps(escort);
+//        setCurrentTimeStamps(escort);
 
         return modelRepository.save(escort);
     }
 
-    private static void setCurrentTimeStamps(BaseEntity baseEntity) {
-        baseEntity.setCreated(Instant.now());
-        baseEntity.setUpdated(Instant.now());
-    }
+//    private static void setCurrentTimeStamps(BaseEntity baseEntity) {
+//        baseEntity.setCreated(Instant.now());
+//        baseEntity.setUpdated(Instant.now());
+//    }
 }

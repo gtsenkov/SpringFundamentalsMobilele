@@ -1,6 +1,7 @@
 package bg.softuni.mobilele.model.entities;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.time.Instant;
 
 @MappedSuperclass
@@ -17,6 +18,17 @@ public abstract class BaseEntity {
     protected Instant created;
 
     public BaseEntity() {
+    }
+
+    @PrePersist
+    public void prePersist() {
+        setCreated(Instant.now());
+        setUpdated(Instant.now());
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        setUpdated(Instant.now());
     }
 
     public Instant getCreated() {
