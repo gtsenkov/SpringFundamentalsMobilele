@@ -81,16 +81,14 @@ public class OfferEntity extends BaseEntity {
         return this;
     }
 
-    //todo uncomment later
+    public UserEntity getUser() {
+        return user;
+    }
 
-//    public UserEntity getUser() {
-//        return user;
-//    }
-//
-//    public OfferEntity setUser(UserEntity user) {
-//        this.user = user;
-//        return this;
-//    }
+    public OfferEntity setUser(UserEntity user) {
+        this.user = user;
+        return this;
+    }
 
     @Override
     public String toString() {
