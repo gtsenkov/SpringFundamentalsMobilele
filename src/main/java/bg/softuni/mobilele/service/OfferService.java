@@ -11,4 +11,6 @@ public interface OfferService {
 
     long save(OfferServiceModel model);
 
+    void delete(long id);
+
 }

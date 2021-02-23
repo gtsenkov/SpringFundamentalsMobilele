@@ -2,14 +2,15 @@ package bg.softuni.mobilele.model.validation;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+import java.lang.annotation.Annotation;
 import java.time.YearMonth;
 
-public class YearPresentOrFutureValidator implements ConstraintValidator<YearPresentOrFuture, Integer> {
+public class YearInPastOrPresentValidator implements ConstraintValidator<YearsInPastOrPresent, Integer> {
 
     private int minYear;
 
     @Override
-    public void initialize(YearPresentOrFuture constraintAnnotation) {
+    public void initialize(YearsInPastOrPresent constraintAnnotation) {
         this.minYear = constraintAnnotation.minYear();
     }
 

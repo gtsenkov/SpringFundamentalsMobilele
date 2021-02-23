@@ -9,8 +9,8 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-@Constraint(validatedBy = YearPresentOrFutureValidator.class)
-public @interface YearPresentOrFuture {
+@Constraint(validatedBy = YearInPastOrPresentValidator.class)
+public @interface YearsInPastOrPresent {
 
     String message() default "Invalid year";
 
@@ -20,4 +20,3 @@ public @interface YearPresentOrFuture {
 
     Class<? extends Payload>[] payload() default {};
 }
-
